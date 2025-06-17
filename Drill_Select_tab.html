@@ -1,0 +1,73 @@
+<!-- Select Tab -->
+<div class="tab-pane fade show active container-custom" id="select" role="tabpanel" aria-labelledby="select-tab">
+    <h3 class="mb-4">Select Load Cases and Profiles</h3>
+    <div class="row">
+        <!-- Drilling Loads -->
+        <div class="col-md-6 mb-4">
+            <div class="form-group-custom">
+                <h5>Drilling Loads</h5>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="displacementToGas"><label class="form-check-label" for="displacementToGas">Displacement to Gas</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="gasKickProfile"><label class="form-check-label" for="gasKickProfile">Gas Kick Profile</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="fracture1"><label class="form-check-label" for="fracture1">Fracture @ Shoe w/ 1/3 BHP at Surface</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="fracture2"><label class="form-check-label" for="fracture2">Fracture @ Shoe w/ Gas Gradient Above</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="lostreturnswithwater"><label class="form-check-label" for="lostreturnswithwater">Lost Returns with Water</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="surfaceprotectionbop"><label class="form-check-label" for="surfaceprotectionbop">Surface Protection (BOP)</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="pressuretest"><label class="form-check-label" for="pressuretest">Pressure Test</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="greenCementPressureTest"><label class="form-check-label" for="greenCementPressureTest">Green Cement Pressure Test</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="drillahead"><label class="form-check-label" for="drillahead">Drill Ahead</label></div>
+            </div>
+        </div>
+
+        <!-- Production Loads -->
+        <div class="col-md-6 mb-4">
+            <div class="form-group-custom">
+                <h5>Production Loads</h5>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="tubingLeak"><label class="form-check-label" for="tubingLeak">Tubing Leak</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="stimulationSurfaceLeak"><label class="form-check-label" for="stimulationSurfaceLeak">Stimulation Surface Leak</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="injectiondowncasing"><label class="form-check-label" for="injectiondowncasing">Injection Down Casing</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="gasmigration"><label class="form-check-label" for="gasmigration">Gas Migration</label></div>
+            </div>
+        </div>
+
+        <!-- Internal Profile -->
+        <div class="col-md-6 mb-4">
+            <div class="form-group-custom">
+                <h5>Internal Profile</h5>
+                <div class="form-group">
+                    <label for="internalProfileSelect">Select Profile:</label>
+                    <select class="form-control" id="internalProfileSelect">
+                        <option value="displacementToGas">Displacement to Gas</option>
+                        <option value="gaskickprofile">Gas Kick Profile</option>
+                        <option value="fractureGasGradient">Fracture @ Shoe w/ Gas Gradient Above</option>
+                        <option value="fractureBHP">Fracture @ Shoe w/ 1/3 BHP at Surface</option>
+                        <option value="lostReturns">Lost Returns with Water</option>
+                        <option value="bop">Surface Protection (BOP)</option>
+                        <option value="pressureTest">Pressure Test</option>
+                        <option value="greenCementTest">Green Cement Pressure Test</option>
+                        <option value="drillAhead">Drill Ahead</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- External Profile -->
+        <div class="col-md-6 mb-4">
+            <div class="form-group-custom">
+                <h5>External Profile</h5>
+                <div class="form-check"><input class="form-check-input" type="radio" name="externalProfile" id="mudAndCement"><label class="form-check-label" for="mudAndCement">Mud and Cement Mix-Water</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="externalProfile" id="permeableZones"><label class="form-check-label" for="permeableZones">Permeable Zones</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="externalProfile" id="minimumPorePressure"><label class="form-check-label" for="minimumPorePressure">Minimum Formation Pore Pressure</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="externalProfile" id="porePressureSeawater"><label class="form-check-label" for="porePressureSeawater">Pore Pressure w/ Seawater Gradient</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="externalProfile" id="fluidGradients"><label class="form-check-label" for="fluidGradients">Fluid Gradients w/ Pore Pressure</label></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="text-center mt-3">
+        <button type="button" class="btn btn-primary mx-2">OK</button>
+        <button type="button" class="btn btn-secondary mx-2">Cancel</button>
+        <button type="button" class="btn btn-success mx-2">Apply</button>
+        <button type="button" class="btn btn-info mx-2">Help</button>
+    </div>
+</div>

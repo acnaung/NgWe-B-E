@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casing Design - Configuration Interface</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .tab-content {
+            padding: 20px;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-group-custom {
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+        .container-custom {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .row-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .column {
+            flex: 1 1 calc(50% - 20px); /* Flex-grow, flex-shrink, and flex-basis */
+            box-sizing: border-box;
+        }
+
+        /* Form load profiles format-------*/
+
+        .form-check-input:focus {
+            outline: 2px solid #0d6efd;
+        }
+        .form-check-label:hover {
+            cursor: pointer;
+            color: #0d6efd;
+        }
+
+        .column {
+            flex: 1 1 calc(50% - 20px); /*---Mobile responsiveness----*/
+        }
+
+        @media (max-width: 768px) {
+            .column {
+                flex: 1 1 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs mb-3" id="mainTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="select-tab" data-bs-toggle="tab" href="#select" role="tab">Select</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="edit-tab" data-bs-toggle="tab" href="#edit" role="tab">Edit</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="temperature-tab" data-bs-toggle="tab" href="#temperature" role="tab">Temperature</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="plot-tab" data-bs-toggle="tab" href="#plot" role="tab">Plot</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="options-tab" data-bs-toggle="tab" href="#options" role="tab">Options</a>
+            </li>
+        </ul>
+        
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="myTabContent">
+            <!-- Select Tab -->
+            <div class="tab-pane fade show active container-custom" id="select" role="tabpanel" aria-labelledby="select-tab">
+                <h3>Select Data</h3>
+                
+                <div class="row-container">
+                    <!-- Drilling Loads Section -->
+                    <div class="column form-group-custom">
+                        <h4>Drilling Loads</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="displacementToGas">
+                            <label class="form-check-label" for="displacementToGas">Displacement to Gas</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gasKickProfile">
+                            <label class="form-check-label" for="gasKickProfile">Gas Kick Profile</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="fractureShoe1_3BHP">
+                            <label class="form-check-label" for="fractureShoe1_3BHP">Fracture @ Shoe w/ 1/3 BHP at Surface</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="fractureShoe_gasgradientabove">
+                            <label class="form-check-label" for="fractureShoe_gasgradientabove">Fracture @ Shoe w/Gas Gradient Above</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="lostreturnswithwater">
+                            <label class="form-check-label" for="lostreturnswithwater">Lost Returns with Water</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="surfaceprotectionbop">
+                            <label class="form-check-label" for="surfaceprotectionbop">Surface Protection (BOP)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="pressuretest">
+                            <label class="form-check-label" for="pressuretest">Pressure Test</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="greenCementPressureTest">
+                            <label class="form-check-label" for="greenCementPressureTest">Green Cement Pressure Test</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="drillahead">
+                            <label class="form-check-label" for="drillahead">Drill Ahead</label>
+                        </div>
+                    <!-- Add more checkboxes as needed -->
+                    </div>
+
+                    <!-- Production Loads Section -->
+                    <div class="column form-group-custom">
+                        <h4>Production Loads</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="tubingLeak">
+                            <label class="form-check-label" for="tubingLeak">Tubing Leak</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="stimulationSurfaceLeak">
+                            <label class="form-check-label" for="stimulationSurfaceLeak">Stimulation Surface Leak</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="injectiondowncasing">
+                            <label class="form-check-label" for="injectiondowncasing">Injection Down Casing</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gasmigration">
+                            <label class="form-check-label" for="gasmigration">Gas Migration</label>
+                        </div>
+                        <!-- Add more checkboxes as needed -->
+                    </div>
+                </div>
+
+                <div class="row-container">
+                    <!-- Internal Profile Section -->
+                    <div class="column form-group-custom">
+                        <h4>Internal Profile</h4>
+                        <div class="form-group">
+                            <label for="internalProfileSelect">Select Internal Profile:</label>
+                            <select class="form-control" id="internalProfileSelect">
+                                <option value="displacementToGas">Displacement to Gas</option>
+                                <option value="gaskickprofile">Gas Kick Profile</option>
+                                <option value="fracture@shoew/gasgradientabove">Fracture @ Shoe w/Gas Gradient Above</option>
+                                <option value="fracture@shoew/1/3bhpatsurface">Fracture @Shoe w/ 1/3 BHP at Surface</option>
+                                <option value="lostreturnswithwater">Lost Returns with Water</option>
+                                <option value="surfaceprotectionbop">Surface Protection (BOP)</option>
+                                <option value="pressuretest">Pressure Test</option>
+                                <option value="greenCementPressureTest">Green Cement Pressure Test</option>
+                                <option value="drillahead">Drill Ahead</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- External Profile Section -->
+                    <div class="column form-group-custom">
+                        <h4>External Profile</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="externalProfile" id="mudAndCementMixWater">
+                            <label class="form-check-label" for="mudAndCementMixWater">Mud and Cement Mix-Water</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="externalProfile" id="permeableZones">
+                            <label class="form-check-label" for="permeableZones">Permeable Zones</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="externalProfile" id="minimumformationporepressure">
+                            <label class="form-check-label" for="minimumformationporepressure">Minimum Formation Pore Pressure</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="externalProfile" id="porepressurew/seawatergradient">
+                            <label class="form-check-label" for="porepressurew/seawatergradient">Pore Pressure w/ Seawater Gradient</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="externalProfile" id="fluidgradientsw/porepressure">
+                            <label class="form-check-label" for="fluidgradientsw/porepressure">Fluid Gradients w/ Pore Pressure</label>
+                        </div>
+                        <!-- Add more radio buttons as needed -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary">OK</button>
+                        <button type="button" class="btn btn-secondary">Cancel</button>
+                        <button type="button" class="btn btn-success">Apply</button>
+                        <button type="button" class="btn btn-info">Help</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit Tab -->
+            <div class="tab-pane fade container-custom" id="edit" role="tabpanel" aria-labelledby="edit-tab">
+                <h3>Edit Data</h3>
+                                
+                <!-- Loads Profile Section -->
+                <div class="mb-3">
+                   <label for="profileType" class="form-label">Select Profile Type:</label>
+                   <select class="form-select" id="profileType" onchange="showProfileInputs()">
+                                <option value="displacementToGas">Displacement to Gas</option>
+                                <option value="gaskickprofile">Gas Kick Profile</option>
+                                <option value="fracture@shoew/gasgradientabove">Fracture @ Shoe w/Gas Gradient Above</option>
+                                <option value="fracture@shoew/1/3bhpatsurface">Fracture @Shoe w/ 1/3 BHP at Surface</option>
+                                <option value="lostreturnswithwater">Lost Returns with Water</option>
+                                <option value="surfaceprotectionbop">Surface Protection (BOP)</option>
+                                <option value="pressuretest">Pressure Test</option>
+                                <option value="greenCementPressureTest">Green Cement Pressure Test</option>
+                                <option value="drillahead">Drill Ahead</option>
+                                <!-- Add more options as needed -->
+                    </select>
+                </div>
+
+                <!--Profile Forms ------>
+
+                <!-- Displacement to Gas Inputs -->
+                <div id="influxDepthSection" class="profile-section conditional-section">
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="influxDepth">Influx Depth</label>
+                                <input type="number" id="influxDepth" class="form-control" placeholder="Enter depth">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="influxUnit">Unit</label>
+                                <select id="influxUnit" class="form-select">
+                                <option>m</option>
+                                <option>ft</option>
+                                </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="porePressure">Pore Pressure</label>
+                            <input type="number" id="porePressure" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="gasGravity">Gas Gravity</label>
+                            <input type="number" id="gasGravity" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="fractureGradient">Fracture Gradient</label>
+                            <input type="number" id="fractureGradient" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="fractureMD">Fracture MD</label>
+                            <input type="number" id="fractureMD" class="form-control">
+                        </div>
+                            <div class="col-md-4">
+                                <label for="fractureUnit">Unit</label>
+                                <select id="fractureUnit" class="form-select">
+                                <option>m</option>
+                                <option>ft</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="fractureMOE">Fracture Margin of Error</label>
+                            <input type="number" id="fractureMOE" class="form-control" placeholder="ppg">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="mudGasMD">Mud/Gas Interface, MD</label>
+                            <input type="number" id="mudGasMD" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="mudGasUnit">Unit</label>
+                            <select id="mudGasUnit" class="form-select">
+                            <option>m</option>
+                            <option>ft</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="mudWeight">Mud Weight</label>
+                            <input type="number" id="mudWeight" class="form-control" placeholder="ppg">
+                        </div>
+                    </div>
+
+
+                </div>
+
+                    <!-- External Profile Section -->
+                    <div class="column form-group-custom">
+                        <h4>External Profile</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="externalProfile" id="mudAndCementMixWater">
+                            <label class="form-check-label" for="mudAndCementMixWater">Mud and Cement Mix-Water</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="externalProfile" id="permeableZones">
+                            <label class="form-check-label" for="permeableZones">Permeable Zones</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="externalProfile" id="minimumformationporepressure">
+                            <label class="form-check-label" for="minimumformationporepressure">Minimum Formation Pore Pressure</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="externalProfile" id="porepressurew/seawatergradient">
+                            <label class="form-check-label" for="porepressurew/seawatergradient">Pore Pressure w/ Seawater Gradient</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="externalProfile" id="fluidgradientsw/porepressure">
+                            <label class="form-check-label" for="fluidgradientsw/porepressure">Fluid Gradients w/ Pore Pressure</label>
+                        </div>
+                        <!-- Add more radio buttons as needed -->
+                    </div>
+                
+                <!-- Action Buttons -->
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary">OK</button>
+                        <button type="button" class="btn btn-secondary">Cancel</button>
+                        <button type="button" class="btn btn-success">Apply</button>
+                        <button type="button" class="btn btn-info">Help</button>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+                
+            
+
+            <!-- Other Tabs Content (same as before) -->
+        </div>
+    
+
+    <!-- Bootstrap JS -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Profile_switcher.js"></script>
+</body>
+</html>
+

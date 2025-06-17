@@ -1,0 +1,68 @@
+/* styles.css */
+
+/* Styling for dropdown headers and text */
+.dropdown-header {
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.navbar .nav-item .nav-link {
+    color: black !important;
+}
+
+.navbar .nav-item .nav-link:hover {
+    color: black !important;
+}
+
+.dropdown-menu {
+    width: 50vw; /* Ensure the dropdown spans the full width of the viewport */
+    left: 0; /* Align the dropdown to the left */
+    right: 0; /* Align the dropdown to the right */
+    padding: 1rem;
+    margin-top: 0; /* Remove any top margin */
+}
+
+.dropdown-menu .d-flex {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between; /* Ensure even spacing between elements */
+}
+
+.dropdown-menu p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #6c757d;
+    max-width: 300px; /* Ensure the description does not overlap */
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 0.75rem; /* Adjust padding for dropdown items */
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-item:hover {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #f8f9fa;
+}
+
+/* Adjusting the width of the grid columns */
+.dropdown-menu .col-md-4 {
+    flex: 0 0 30%; /* Make each column take 30% of the width */
+    max-width: 30%; /* Ensure the columns don't exceed 30% of the width */
+}
+
+.dropdown-menu .col-md-6 {
+    flex: 0 0 48%; /* Make each column take 48% of the width */
+    max-width: 48%; /* Ensure the columns don't exceed 48% of the width */
+}

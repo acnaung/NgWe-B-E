@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Parameters</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        .tab-content {
+            padding: 20px;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-group-custom {
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h3>Design Parameters: 4 1/2" Production Liner</h3>
+
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="design-factors-tab" data-bs-toggle="tab" data-bs-target="#design-factors" type="button" role="tab" aria-controls="design-factors" aria-selected="true">Design Factors</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="analysis-options-tab" data-bs-toggle="tab" data-bs-target="#analysis-options" type="button" role="tab" aria-controls="analysis-options" aria-selected="false">Analysis Options</button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="myTabContent">
+            <!-- Design Factors Tab -->
+            <div class="tab-pane fade show active" id="design-factors" role="tabpanel" aria-labelledby="design-factors-tab">
+                <div class="form-section">
+                    <h4>Pipe Body</h4>
+                    <div class="form-group-custom">
+                        <label for="burst">Burst:</label>
+                        <input type="text" class="form-control" id="burst" value="1.100">
+                    </div>
+                    <div class="form-group-custom">
+                        <label for="axial-tension">Axial Tension:</label>
+                        <input type="text" class="form-control" id="axial-tension" value="1.600">
+                    </div>
+                    <div class="form-group-custom">
+                        <label for="axial-compression">Axial Compression:</label>
+                        <input type="text" class="form-control" id="axial-compression" value="1.300">
+                    </div>
+                    <div class="form-group-custom">
+                        <label for="collapse">Collapse:</label>
+                        <input type="text" class="form-control" id="collapse" value="1.050">
+                    </div>
+                    <div class="form-group-custom">
+                        <label for="triaxial">Triaxial:</label>
+                        <input type="text" class="form-control" id="triaxial" value="1.250">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h4>Connection</h4>
+                    <div class="form-group-custom">
+                        <label for="connection-burst-leak">Burst/Leak:</label>
+                        <input type="text" class="form-control" id="connection-burst-leak" value="1.100">
+                    </div>
+                    <div class="form-group-custom">
+                        <label for="connection-axial-tension">Axial Tension:</label>
+                        <input type="text" class="form-control" id="connection-axial-tension" value="1.300">
+                    </div>
+                    <div class="form-group-custom">
+                        <label for="connection-axial-compression">Axial Compression:</label>
+                        <input type="text" class="form-control" id="connection-axial-compression" value="1.300">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analysis Options Tab -->
+            <div class="tab-pane fade" id="analysis-options" role="tabpanel" aria-labelledby="analysis-options-tab">
+                <div class="form-section">
+                    <h4>Design Constraint</h4>
+                    <div class="form-group-custom">
+                        <label for="min-internal-drift">Min Internal Drift:</label>
+                        <input type="number" class="form-control" id="min-internal-drift" value="3.116">
+                        <small class="form-text text-muted">Unit: in (inch)</small>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h4>Analysis Options</h4>
+                    <div class="form-group-custom">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="external-pressure-profile">
+                            <label class="form-check-label" for="external-pressure-profile">Single External Pressure Profile</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="temperature-deration" checked>
+                            <label class="form-check-label" for="temperature-deration">Temperature Deration</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="fracture-shoe" checked>
+                            <label class="form-check-label" for="fracture-shoe">Limit to Fracture at Shoe</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="buckling">
+                            <label class="form-check-label" for="buckling">Buckling</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="burst-wall-thickness" checked>
+                            <label class="form-check-label" for="burst-wall-thickness">Use Burst Wall Thickness in Triaxial</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary">OK</button>
+                <button type="button" class="btn btn-secondary">Cancel</button>
+                <button type="button" class="btn btn-success">Apply</button>
+                <button type="button" class="btn btn-info">Help</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
